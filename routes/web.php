@@ -45,3 +45,7 @@ Route::get('hsp/create', [hspcontroller::class, 'create'])->name('hsp.create');
 
 Route::post('hsp/guardar', [hspcontroller::class, 'store'])->name('hsp.store'); 
 Route::get('hsp/lista', [hspcontroller::class, 'index'])->name('hsp.index'); 
+Route::get('hsp/{mediciones}/editar', [hspcontroller::class, 'edit'])->name('hsp.edit'); 
+Route::put('hsp/{mediciones}/actualizar', [hspcontroller::class, 'update'])->name('hsp.update'); 
+Route::get('hsp/{mediciones}/ver', [hspcontroller::class, 'show'])->name('hsp.show'); 
+Route::delete('hsp/{mediciones}/eliminar', [hspcontroller::class, 'destroy'])->name('hsp.destroy'); 
