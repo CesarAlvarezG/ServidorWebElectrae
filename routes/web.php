@@ -42,7 +42,6 @@ Route::get('/services', function () {
 
 
 Route::get('hsp/create', [hspcontroller::class, 'create'])->name('hsp.create'); 
-
 Route::post('hsp/guardar', [hspcontroller::class, 'store'])->name('hsp.store'); 
 Route::get('hsp/lista', [hspcontroller::class, 'index'])->name('hsp.index'); 
 Route::get('hsp/{mediciones}/editar', [hspcontroller::class, 'edit'])->name('hsp.edit'); 

@@ -14,8 +14,8 @@ class hspcontroller extends Controller
      */
     public function index() 
     {
-        $mediciones =hsp::orderByDesc('id')->get();
-        return view('hsp.index', compact('mediciones'));
+        
+        return view('hsp.index');
     }
 
     /**

@@ -33,6 +33,8 @@
    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+   @livewireStyles
+
 </head>
 
 <body>
@@ -98,48 +100,13 @@
 
         <div>
             <a href="{{ route('hsp.create') }}"class="btn btn-link"> Ingresar medición</a>
-                  <a href="{{ route('hsp.index') }}"class="btn btn-link"> Lista mediciones</a>
+                  <a href="{{ route('hsp.index') }}"class="btn btn-link"> Lista de mediciones</a>
         </div>
 
         <h3>
             Listado de Mediciones.
         </h3>
-        <table class="table table-stripped table-hover">
-
-            <thead>
-                <tr>
-                    <th>
-                        Hora Solar Promedio:
-                    </th>
-                    <th>
-                        Fecha medicion:
-                    </th>
-                    <th>
-                        opciones
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                 @foreach ($mediciones as $mediciones)
-                 <tr>
-                    <td>
-                        {{ $mediciones ->hsp }}
-                    </td>
-                    <td>
-                        {{ $mediciones->fecha_medicion }}
-                    </td>
-                    <td>
-                        <a href="{{ route('hsp.edit', $mediciones) }}">Editar>   </a>
-                        
-                        <a href="{{ route('hsp.show', $mediciones) }}">Ver></a>
-                    </td>
-
-                    
-                 </tr>
-                     
-                 @endforeach
-            </tbody>
-        </table>
+        @livewire('hspindex')
 
 
 
@@ -225,6 +192,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>
