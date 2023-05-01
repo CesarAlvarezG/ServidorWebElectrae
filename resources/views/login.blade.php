@@ -9,7 +9,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>Contact</title>
+   <title>Software</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -17,20 +17,20 @@
    <link rel="stylesheet" type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css" />
    <!-- bootstrap css -->
-   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
    <!-- style css -->
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
    <!-- Responsive-->
-   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
    <!-- fevicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
    <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
    <!-- Tweaks for older IEs-->
    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    <!-- owl stylesheets -->
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
 </head>
@@ -75,13 +75,12 @@
                <li><a href="about">About</a></li>
                <li><a href="software">Mediciones</a></li>
                <li><a href="services">Services</a></li>
-               <li class="active"><a href="contact">Contact Us</a></li>
-               
+               <li><a href="contact">Contact Us</a></li>
             </ul>
          </div>
          <div class="menu_main_1">
             <ul>
-               <li><a href="login">login</a></li>
+               <li class="active"><a href="login">login</a></li>
                <li><a href="#">Register</a></li>
                <li><a href="#">Log out</a></li>
             </ul>
@@ -89,59 +88,57 @@
       </div>
    </div>
    <!--costume header section end -->
-   <!--contact section start -->
-   <div class="contact_section layout_padding">
+   <!--software section start -->
+   <div class="software_section layout_padding padding_botoom_90">
       <div class="container">
-         <h1 class="work_taital">Get In Touch</h1>
-      </div>
-   </div>
-   <div class="contact_section_2">
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-md-6 padding_0">
-               <div><img src="images/img-10.png" class="image_10"></div>
+         <h1 class="software_taital">Hora Solar Pico</h1>
+         <p class="software_text"> La Hora Solar Pico (HSP) es la cantidad de energía solar que recibe un metro cuadrado de superficie</p>
+         <div class="software_section_2 layout_padding">
+            
+             <div>
+                  <h1 class="col-sm-3"> Iniciar sesion:</h1>               
             </div>
-            <div class="col-md-6">
-               <div class="email_text">
-                  <div class="form-group">
-                     <input type="text" class="email-bt" placeholder="Name" name="Email">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" class="email-bt" placeholder="Email" name="Email">
-                  </div>
-                  <div class="form-group">
-                     <input type="text" class="email-bt" placeholder="Phone Numbar" name="Email">
-                  </div>
-                  <div class="form-group">
-                     <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                  </div>
-                  <div class="send_btn"><a href="#">SEND</a></div>
-               </div>
-            </div>
+            <form method= "POST">
+                @csrf
+                <label >
+                    <input name= "email" type ="email" placeholder="Correo electronico...">
+                </label> <br>
+
+                <label >
+                    <input name= "password" type ="password" placeholder="Contraseña...">
+                </label> <br>
+
+                <button type="submit" class="bton btn-primary p-2">
+                    Iniciar sesion
+                 </button>
+            </form>
+
+
+
          </div>
       </div>
    </div>
-   <!--contact section end -->
+   <!--software section end -->
    <!--footer section start -->
-   <div class="footer_section layout_padding">
+   <div class="footer_section layout_padding margin_top_0">
       <div class="container">
          <div class="row">
-            <div class="col-lg-5 col-sm-6">
+            {{-- <div class="col-lg-5 col-sm-6">
                <div class="footer_logo"><img src="images/footer-logo.png"></div>
                <p class="dolor_text">There are many variations of passages of Lorem Ipsum available, but the majority
                   have suffered alteration in some form, by injected humour, or </p>
-            </div>
+            </div> --}}
             <div class="col-lg-3 col-sm-6">
                <h4 class="address_text">Adderes</h4>
                <p class="dolor_text">passages of Lorem Ipsum available, but the majority have</p>
                <p class="dolor_text">(+71) 9876543210</p>
                <p class="dolor_text">demo@gmail.com</p>
             </div>
-            <div class="col-lg-4 col-sm-12">
+            {{-- <div class="col-lg-4 col-sm-12">
                <h4 class="address_text">Newsletter</h4>
                <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
                <div class="subscribe_bt"><a href="#">Subscribe</a></div>
-            </div>
+            </div> --}}
          </div>
          <div class="social_icon">
             <ul>
@@ -161,16 +158,16 @@
    </div>
    <!-- copyright section end -->
    <!-- Javascript files-->
-   <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
-   <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
-   <script src="js/plugin.js"></script>
+   <script src="{{ asset('js/jquery.min.js') }}"></script>
+   <script src="{{ asset('js/popper.min.js') }}"></script>
+   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+   <script src="{{ asset('js/plugin.js') }}"></script>
    <!-- sidebar -->
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
+   <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+   <script src="{{ asset('js/custom.js') }}"></script>
    <!-- javascript -->
-   <script src="js/owl.carousel.js"></script>
+   <script src="{{ asset('js/owl.carousel.js') }}"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
    <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
    <script>

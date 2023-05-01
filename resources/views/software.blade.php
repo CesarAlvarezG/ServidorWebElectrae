@@ -71,19 +71,19 @@
       <div class="container">
          <div class="menu_main">
             <ul>
-               <li class="active"><a href="index">Inicio</a></li>
+               <li><a href="index">Inicio</a></li>
                <li><a href="about">About</a></li>
-               <li><a href="software">Mediciones</a></li>
+               <li class="active"><a href="software">Mediciones</a></li>
                <li><a href="services">Services</a></li>
                <li><a href="contact">Contact Us</a></li>
             </ul>
          </div>
          <div class="menu_main_1">
             <ul>
-               <li><a href="#">login</a></li>
+               <li><a href="login">login</a></li>
                <li><a href="#">Register</a></li>
-               <li><a href="#"><img src="images/search-icon.png"></a></li>
-            </ul>
+               <li><a href="#"></a></li>
+             </ul>
          </div>
       </div>
    </div>

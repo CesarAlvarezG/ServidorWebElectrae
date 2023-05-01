@@ -41,10 +41,39 @@ Route::get('/services', function () {
 });
 
 
-Route::get('hsp/create', [hspcontroller::class, 'create'])->name('hsp.create'); 
-Route::post('hsp/guardar', [hspcontroller::class, 'store'])->name('hsp.store'); 
-Route::get('hsp/lista', [hspcontroller::class, 'index'])->name('hsp.index'); 
-Route::get('hsp/{mediciones}/editar', [hspcontroller::class, 'edit'])->name('hsp.edit'); 
-Route::put('hsp/{mediciones}/actualizar', [hspcontroller::class, 'update'])->name('hsp.update'); 
-Route::get('hsp/{mediciones}/ver', [hspcontroller::class, 'show'])->name('hsp.show'); 
-Route::delete('hsp/{mediciones}/eliminar', [hspcontroller::class, 'destroy'])->name('hsp.destroy'); 
+
+Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por login
+
+
+    Route::get('hsp/create', [hspcontroller::class, 'create'])->name('hsp.create'); 
+    Route::post('hsp/guardar', [hspcontroller::class, 'store'])->name('hsp.store'); 
+    Route::get('hsp/lista', [hspcontroller::class, 'index'])->name('hsp.index'); 
+    Route::get('hsp/{mediciones}/editar', [hspcontroller::class, 'edit'])->name('hsp.edit'); 
+    Route::put('hsp/{mediciones}/actualizar', [hspcontroller::class, 'update'])->name('hsp.update'); 
+    Route::get('hsp/{mediciones}/ver', [hspcontroller::class, 'show'])->name('hsp.show'); 
+    Route::delete('hsp/{mediciones}/eliminar', [hspcontroller::class, 'destroy'])->name('hsp.destroy'); 
+
+});
+
+
+
+
+
+
+
+//login
+Route:: view('login','login') -> name('login')-> middleware('guest');
+Route:: post('login',  function(){
+    $credentials= request()->only('email', 'password');
+
+
+    if(Auth::attempt($credentials)){
+        request()->session()->regenerate();
+
+        return redirect('/software') ;
+    }
+    return redirect('login');
+
+
+} );
+//Route:: view('logout','logout');

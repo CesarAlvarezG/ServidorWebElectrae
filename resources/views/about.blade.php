@@ -80,9 +80,9 @@
          </div>
          <div class="menu_main_1">
             <ul>
-               <li><a href="#">login</a></li>
+               <li><a href="login">login</a></li>
                <li><a href="#">Register</a></li>
-               <li><a href="#"><img src="images/search-icon.png"></a></li>
+               <li><a href="#">Log out</a></li>
             </ul>
          </div>
       </div>
