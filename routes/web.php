@@ -70,6 +70,13 @@ Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por log
 //login
 Route:: view('login','login') -> name('login')-> middleware('guest');
 
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
+
+    return Redirect::to('/');
+})->name('logout');
 
 Route:: post('login', [logincontroller::class, 'login'] );
 Route:: post('logout', [logincontroller::class, 'logout'] );
