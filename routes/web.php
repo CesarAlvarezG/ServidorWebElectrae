@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\hspcontroller; 
+use App\Http\Controllers\Auth\logincontroller; 
+
+use App\Exceptions\Handler; 
+use Illuminate\Http\Exception\HttpResponseException;
+use Illuminate\Validation\ValidationException;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,17 +69,9 @@ Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por log
 
 //login
 Route:: view('login','login') -> name('login')-> middleware('guest');
-Route:: post('login',  function(){
-    $credentials= request()->only('email', 'password');
 
 
-    if(Auth::attempt($credentials)){
-        request()->session()->regenerate();
+Route:: post('login', [logincontroller::class, 'login'] );
+Route:: post('logout', [logincontroller::class, 'logout'] );
 
-        return redirect('/software') ;
-    }
-    return redirect('login');
-
-
-} );
 //Route:: view('logout','logout');

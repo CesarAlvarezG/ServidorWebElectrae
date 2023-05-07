@@ -90,8 +90,7 @@
          <div class="menu_main_1">
             <ul>
                <li><a href="login">login</a></li>
-               <li><a href="#">Register</a></li>
-               <li><a href="#">Log out</a></li>
+               <li><a href="logout">Log out</a></li>
             </ul>
          </div>
       </div>

@@ -72,17 +72,16 @@
          <div class="menu_main">
             <ul>
                <li><a href="{{ asset('/index') }}">Inicio</a></li>
-               <li class="active" ><a href="{{ asset('/about') }}">About</a></li>
-               <li><a href="{{ asset('/software') }}">Mediciones</a></li>
+               <li><a href="{{ asset('/about') }}">About</a></li>
+               <li class="active" ><a href="{{ asset('/software') }}">Mediciones</a></li>
                <li><a href="{{ asset('/services') }}">Services</a></li>
                <li><a href="{{ asset('/contact') }}">Contact Us</a></li>
             </ul>
          </div>
          <div class="menu_main_1">
             <ul>
-               <li><a href="#">login</a></li>
-               <li><a href="#">Register</a></li>
-               <li><a href="#"><img src="/images/search-icon.png"></a></li>
+               <li><a href="{{ asset('/login') }}">login</a></li>
+               <li><a href="{{ asset('/logout') }}">Log out</a></li>
             </ul>
          </div>
       </div>

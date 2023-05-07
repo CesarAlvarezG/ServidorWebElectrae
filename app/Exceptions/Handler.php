@@ -4,6 +4,15 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Session\TokenMismatchException;
+    use Illuminate\Database\Eloquent\ModelNotFoundException;
+    use Symfony\Component\HttpKernel\Exception\HttpException;
+    use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+    use Illuminate\Validation\ValidationException;
+    use Illuminate\Auth\AuthenticationException;
+
+
+
 
 class Handler extends ExceptionHandler
 {

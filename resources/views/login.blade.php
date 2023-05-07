@@ -81,8 +81,7 @@
          <div class="menu_main_1">
             <ul>
                <li class="active"><a href="login">login</a></li>
-               <li><a href="#">Register</a></li>
-               <li><a href="#">Log out</a></li>
+               <li><a href="logout">Log out</a></li>
             </ul>
          </div>
       </div>
@@ -98,23 +97,29 @@
              <div>
                   <h1 class="col-sm-3"> Iniciar sesion:</h1>               
             </div>
-            <form method= "POST">
+
+             <form method= "POST">
                 @csrf
                 <label >
-                    <input name= "email" type ="email" placeholder="Correo electronico...">
-                </label> <br>
+                    <input name= "email" type ="email" required autofocus value ="{{ old('email') }}" placeholder="Correo electronico...">
+                </label>
+                @error('email') {{ $message }} @enderror
+                <br>
 
                 <label >
-                    <input name= "password" type ="password" placeholder="Contraseña...">
+                    <input name= "password" type ="password" required placeholder="Contraseña...">
+                </label> 
+                @error('password') {{ $message }} @enderror
+                <br>
+                <label>
+                  <input type="checkbox" name="remember">
+                  Recordar mi sesion
                 </label> <br>
 
                 <button type="submit" class="bton btn-primary p-2">
                     Iniciar sesion
                  </button>
             </form>
-
-
-
          </div>
       </div>
    </div>
