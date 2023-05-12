@@ -218,6 +218,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>

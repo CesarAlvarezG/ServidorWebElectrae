@@ -176,6 +176,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>

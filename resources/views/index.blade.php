@@ -333,6 +333,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>

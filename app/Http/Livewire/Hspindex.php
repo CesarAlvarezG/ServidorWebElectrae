@@ -43,9 +43,15 @@ class Hspindex extends Component
     {
         $query =hsp::orderByDesc('id');
         if($this->busqueda != ''){
-            $query -> where('hsp', 'LIKE', '%'.$this->busqueda.'%' );
+            $query -> where('fecha_medicion', 'LIKE', '%'.$this->busqueda.'%') ->orwhere('hsp', 'LIKE', '%'.$this->busqueda.'%');
         }
         return $query;
 
+    }
+
+    
+    public function init()
+    {
+        $this->emit('refresh');
     }
 }

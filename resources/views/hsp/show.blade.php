@@ -200,6 +200,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>

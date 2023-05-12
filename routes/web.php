@@ -63,10 +63,6 @@ Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por log
 
 
 
-
-
-
-
 //login
 Route:: view('login','login') -> name('login')-> middleware('guest');
 

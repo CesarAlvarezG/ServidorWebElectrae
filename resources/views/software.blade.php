@@ -174,6 +174,8 @@
       });
 
    </script>
+       @livewireScripts
+
 </body>
 
 </html>
