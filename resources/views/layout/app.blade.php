@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,31 +35,87 @@
       media="screen">
 </head>
 
-<body>
+{{-- ---------------------------------separacion header y body-------------------------------------------- --}}
 
-   <!--costume header section start -->
-   <div class="costume_header">
-      <div class="container">
-         <div class="menu_main">
-            <ul>
-               <li><a href="index">Inicio</a></li>
-               <li><a href="about">About</a></li>
-               <li class="active"><a href="software">Mediciones</a></li>
-               <li><a href="services">Services</a></li>
-               <li><a href="contact">Contact Us</a></li>
+<body>
+   <!--header section start -->
+   <div class="header_section header_bg">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="logo"><a href="index"><img src="images/logo.png"></a></div>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="index">Inicio</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="about">About</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="software">Mediciones</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="services">Services</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact Us</a>
+               </li>
             </ul>
          </div>
-         <div class="menu_main_1">
-            <ul>
-               <li><a href="login">login</a></li>
-               <li><a href="logout">Log out</a></li>
-             </ul>
-         </div>
-      </div>
+      </nav>
    </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
    @yield('contenido')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
    <!--software section end -->
    <!--footer section start -->
    <div class="footer_section layout_padding margin_top_0">
