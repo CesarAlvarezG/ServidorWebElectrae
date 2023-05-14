@@ -6,6 +6,11 @@ use App\Models\hsp;
 use Illuminate\Http\Request;
 use Illuminate\Http\validate;
 use App\Http\Requests\hsprequest;
+use Carbon\Carbon;
+
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
+
+
 
 class hspcontroller extends Controller
 {
@@ -25,6 +30,41 @@ class hspcontroller extends Controller
     {
         //
         return view('hsp.create');
+    }
+
+
+
+    public function graph(Request $request)
+    {
+        // $startDate = $request->has('start_date');
+        // $endDate = $request->has('end_date');
+        $startDate = $request->has('start_date') ?  $request->start_date : now();
+        $endDate = $request->end_date;
+
+
+        $chartData = hsp::whereBetween('fecha_medicion', [$startDate, $endDate])
+                    ->orderBy('fecha_medicion', 'asc')
+                    ->get(['fecha_medicion', 'hsp']);
+ //                   ->toArray();
+        $chartData = json_encode($chartData);
+
+
+        return view('hsp.graph', compact('chartData'));
+
+    }
+
+    public function chart(Request $request){
+
+        $startDate = $request->has('start_date') ?  $request->start_date : now();
+        $endDate = $request->end_date;
+
+        $chartData = hsp::whereBetween('fecha_medicion',[$startDate, $endDate])
+                    ->orderBy('fecha_medicion', 'asc')
+                    ->get(['fecha_medicion', 'hsp']);
+
+        $chartData = json_encode($chartData);
+
+        return view('hsp.chart', compact('chartData'));
     }
 
     /**

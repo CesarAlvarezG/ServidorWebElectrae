@@ -103,6 +103,8 @@
             <div>
                <a href="{{ route('hsp.create') }}"class="btn btn-link"> Ingresar medición</a>
                <a href="{{ route('hsp.index') }}"class="btn btn-link"> Lista mediciones</a>
+               <a href="{{ route('hsp.graph') }}"class="btn btn-link"> Graficar mediciones</a>
+
             </div>
             
              <div>
@@ -129,9 +131,6 @@
                         Guardar
                      </button>
                   </div>
-
-
-
 
                </form>
  

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,36 +35,7 @@
 </head>
 
 <body>
-   <!--header section start -->
-   <div class="header_section header_bg">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <div class="logo"><a href="index"><img src="images/logo.png"></a></div>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-               <li class="nav-item">
-                  <a class="nav-link" href="index">Inicio</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="about">About</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="software">Mediciones</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="services">Services</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact Us</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-   </div>
-   <!--header section end -->
+
    <!--costume header section start -->
    <div class="costume_header">
       <div class="container">
@@ -86,24 +56,9 @@
          </div>
       </div>
    </div>
-   <!--costume header section end -->
-   <!--software section start -->
-   <div class="software_section layout_padding padding_botoom_90">
-      <div class="container">
-         <h1 class="software_taital">Hora Solar Pico</h1>
-         <p class="software_text"> La Hora Solar Pico (HSP) es la cantidad de energía solar que recibe un metro cuadrado de superficie</p>
-         <div class="software_section_2 layout_padding">
-            
-             <div>
-                  <a href="{{ route('hsp.create') }}"class="btn btn-link"> Ingresar medición</a>
-                  <a href="{{ route('hsp.index') }}"class="btn btn-link"> Lista mediciones</a>
-                  <a href="{{ route('hsp.chart') }}"class="btn btn-link"> Graficar mediciones</a>
-                  <a href="{{ route('hsp.graph') }}"class="btn btn-link"> GRAPH mediciones</a>
 
-            </div>
-         </div>
-      </div>
-   </div>
+   @yield('contenido')
+
    <!--software section end -->
    <!--footer section start -->
    <div class="footer_section layout_padding margin_top_0">

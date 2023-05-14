@@ -4,7 +4,7 @@
             <input type="text" name="" id="" placeholder="Buscar..." class="form-control" wire:model="busqueda" wire:click="$refresh()">
         </div>
         <div class="col-sm-3">
-            <select name="" id="" class="form-select" wire:click="$refresh()" wire:model="paginacion"  wire:init="init">
+            <select name="" id="" class="form-select form-control" wire:click="$refresh()" wire:model="paginacion"  wire:init="init">
                 <option value="10">10</option>
                 <option value="20">20</option>
                 <option value="50">50</option>

@@ -35,6 +35,22 @@
       media="screen">
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
    <!--header section start -->
    <div class="header_section header_bg">
@@ -97,13 +113,87 @@
              <div>
                   <a href="{{ route('hsp.create') }}"class="btn btn-link"> Ingresar medición</a>
                   <a href="{{ route('hsp.index') }}"class="btn btn-link"> Lista mediciones</a>
-                  <a href="{{ route('hsp.chart') }}"class="btn btn-link"> Graficar mediciones</a>
-                  <a href="{{ route('hsp.graph') }}"class="btn btn-link"> GRAPH mediciones</a>
 
-            </div>
+
+                  <form name="buscador" method= "GET">
+                    @csrf
+    
+                    <div class="col-sm-4">
+                       <label for="start_date" class="form-label">* Fecha de Mediciones inicial </label>
+                       <input type="datetime-local" name="start_date" id="start_date" class="form-control" value="{{ request()->start_date }}">
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="end_date" class="form-label">* Fecha de Mediciones final </label>
+                        <input type="datetime-local" name="end_date" id="end_date" class="form-control" value="{{ request()->end_date }}">
+                     </div>
+
+                    <div class="col-sm-12 text-end my-4">
+                       <button type="submit" class="bton btn-primary p-2">
+                          Graficar
+                       </button>
+                    </div>
+                  </form>
+
+
+                  <div>
+                     <canvas id="myChart"></canvas>
+                 </div>
+
+               </div>
          </div>
       </div>
    </div>
+
+
+   <script src="https://code.jquery.com/jquery-3.6.1.min.js"> </script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+   <script>  
+   
+       $(document).ready(function(){
+           const graphData = JSON.parse(`<?php echo $chartData?>`);
+   
+           const ctx = document.getElementById('myChart');
+   
+           new Chart(ctx, {
+               type: 'bar',
+               data: {
+               labels: graphData.map(row => row.fecha_medicion),
+               datasets: [{
+                   label: '# of Votes',
+                   data: graphData.map(row => row.hsp),
+                   borderWidth: 1
+               }]
+               },
+               options: {
+               scales: {
+                   y: {
+                   beginAtZero: true
+                   }
+               }
+               }
+           });
+       });
+   
+    
+   
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    <!--software section end -->
    <!--footer section start -->
    <div class="footer_section layout_padding margin_top_0">

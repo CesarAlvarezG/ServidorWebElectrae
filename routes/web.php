@@ -29,9 +29,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/software', function () {
-    return view('software');
-});
+
 
 Route::get('/about', function () {
     return view('about');
@@ -58,6 +56,13 @@ Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por log
     Route::put('hsp/{mediciones}/actualizar', [hspcontroller::class, 'update'])->name('hsp.update'); 
     Route::get('hsp/{mediciones}/ver', [hspcontroller::class, 'show'])->name('hsp.show'); 
     Route::delete('hsp/{mediciones}/eliminar', [hspcontroller::class, 'destroy'])->name('hsp.destroy'); 
+
+    Route::get('/software', function () {return view('software');  });
+    
+    
+    Route::get('/hsp/graph', [hspcontroller::class, 'graph'])->name('hsp.graph'); 
+
+    Route::get('/chart',[hspcontroller::class,'chart'])->name('hsp.chart');
 
 });
 
