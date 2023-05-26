@@ -49,19 +49,13 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item">
-                  <a class="nav-link" href="index">Inicio</a>
+                  <a class="nav-link" href="{{ asset('/inicio') }}">Inicio</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="about">About</a>
+                  <a class="nav-link" href="{{ asset('/proyectos') }}">Proyectos</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="software">Mediciones</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="services">Services</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="contact">Contact Us</a>
+                  <a class="nav-link" href="{{ asset('/mediciones') }}">Mediciones</a>
                </li>
             </ul>
          </div>
@@ -70,83 +64,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    
    @yield('contenido')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
    
    <!--software section end -->
    <!--footer section start -->
    <div class="footer_section layout_padding margin_top_0">
-      <div class="container">
-         <div class="row">
-            {{-- <div class="col-lg-5 col-sm-6">
-               <div class="footer_logo"><img src="images/footer-logo.png"></div>
-               <p class="dolor_text">There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or </p>
-            </div> --}}
-            <div class="col-lg-3 col-sm-6">
-               <h4 class="address_text">Adderes</h4>
-               <p class="dolor_text">passages of Lorem Ipsum available, but the majority have</p>
-               <p class="dolor_text">(+71) 9876543210</p>
-               <p class="dolor_text">demo@gmail.com</p>
-            </div>
-            {{-- <div class="col-lg-4 col-sm-12">
-               <h4 class="address_text">Newsletter</h4>
-               <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
-               <div class="subscribe_bt"><a href="#">Subscribe</a></div>
-            </div> --}}
-         </div>
-         <div class="social_icon">
-            <ul>
-               <li><a href="#"><img src="images/fb-icon.png"></a></li>
-               <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-               <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-               <li><a href="#"><img src="images/instagram-icon.png"></a></li>
-            </ul>
-         </div>
-      </div>
+     
    </div>
    <!--footer section end -->
    <!-- copyright section start -->

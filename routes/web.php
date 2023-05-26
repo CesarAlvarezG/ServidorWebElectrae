@@ -25,13 +25,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/index', function () {
+Route::get('/inicio', function () {
     return view('index');
 });
 
 
 
-Route::get('/about', function () {
+Route::get('/proyectos', function () {
     return view('about');
 });
 
@@ -57,12 +57,12 @@ Route::group(['middleware' => 'auth'], function() {   //rutas protegidas por log
     Route::get('hsp/{mediciones}/ver', [hspcontroller::class, 'show'])->name('hsp.show'); 
     Route::delete('hsp/{mediciones}/eliminar', [hspcontroller::class, 'destroy'])->name('hsp.destroy'); 
 
-    Route::get('/software', function () {return view('software');  });
+    Route::get('/mediciones', function () {
+        return view('software');
+    });
     
     
     Route::get('/hsp/graph', [hspcontroller::class, 'graph'])->name('hsp.graph'); 
-
-    Route::get('/chart',[hspcontroller::class,'chart'])->name('hsp.chart');
 
 });
 

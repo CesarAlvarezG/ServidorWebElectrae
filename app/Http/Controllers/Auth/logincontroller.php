@@ -21,7 +21,7 @@ class logincontroller extends Controller
         if(Auth::attempt($request->only('email', 'password'), $remember )){
             $request->session()->regenerate();
     
-            return redirect('/software') ;
+            return redirect('mediciones') ;
         }
         return redirect('login');
        

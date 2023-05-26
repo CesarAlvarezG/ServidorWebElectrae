@@ -8,11 +8,9 @@
       <div class="container">
          <div class="menu_main">
             <ul>
-               <li><a href="index">Inicio</a></li>
-               <li class="active" ><a href="about">About</a></li>
-               <li><a href="software">Mediciones</a></li>
-               <li><a href="services">Services</a></li>
-               <li><a href="contact">Contact Us</a></li>
+               <li><a href="{{ asset('/inicio') }}">Inicio</a></li>
+               <li class="active"><a href="{{ asset('/proyectos') }}">Proyectos</a></li>
+               <li ><a href="{{ asset('/mediciones') }}">Mediciones</a></li>
             </ul>
          </div>
          <div class="menu_main_1">
@@ -25,18 +23,45 @@
    </div>
    <!--costume header section end -->
    <!-- about section start -->
-   <div class="about_section layout_padding padding_top_90">
+   <div class="services_section layout_padding">
       <div class="container">
          <div class="row">
             <div class="col-md-6">
-               <h1 class="about_taital">About Softwares</h1>
-               <p class="about_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
-                  a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                  Latin professor at Hampden</p>
-               <div class="read_bt"><a href="#">Read More</a></div>
+               <h1 class="services_taital">Algunos proyectos de ELECTRAE</h1>
+               
+               <div class="image_2"><img src="images/dimensionamiento.png"></div>
             </div>
             <div class="col-md-6">
-               <div><img src="images/img-1.png" class="image_1"></div>
+               <div class="box_main">
+                  <h1 class="technology_text">Herramienta para el dimensionamiento de sistemas fotovoltaicos aislados.</h1>
+                  <p class="dummy_text">Software para el diseño y calculo de sistemas fotovoltaicos.</p>
+                  
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            
+            <div class="col-md-6">
+               <div class="box_main">
+                  <h1 class="technology_text">Estación de medición de rayos ultravioleta energizado por un sistema fotovoltaico.</h1>
+                  <p class="dummy_text">Dispositivo para el monitoreo de la radiación ultravioleta y pedagogía para el publico en general, llamado Solmaforo.</p>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="image_2"><img src="images/estacion_ultravioleta.png"></div>
+            </div>
+         </div>
+
+
+         <div class="row">
+            <div class="col-md-6">
+               <div class="image_2"><img src="images/red_asentamiento.png"></div>
+            </div>
+            <div class="col-md-6 pb-5">
+               <div class="box_main">
+                  <h1 class="technology_text">Diseño De Red Fotovoltaica Aislada Para El Abastecimiento Del Servicio Eléctrico De Asentamientos Indígenas</h1>
+                  <p class="dummy_text">Sistema Fotovoltaico Aislado.</p>
+               </div>
             </div>
          </div>
       </div>

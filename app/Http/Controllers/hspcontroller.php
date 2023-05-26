@@ -36,8 +36,6 @@ class hspcontroller extends Controller
 
     public function graph(Request $request)
     {
-        // $startDate = $request->has('start_date');
-        // $endDate = $request->has('end_date');
         $startDate = $request->has('start_date') ?  $request->start_date : now();
         $endDate = $request->end_date;
 
@@ -53,19 +51,6 @@ class hspcontroller extends Controller
 
     }
 
-    public function chart(Request $request){
-
-        $startDate = $request->has('start_date') ?  $request->start_date : now();
-        $endDate = $request->end_date;
-
-        $chartData = hsp::whereBetween('fecha_medicion',[$startDate, $endDate])
-                    ->orderBy('fecha_medicion', 'asc')
-                    ->get(['fecha_medicion', 'hsp']);
-
-        $chartData = json_encode($chartData);
-
-        return view('hsp.chart', compact('chartData'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -73,7 +58,6 @@ class hspcontroller extends Controller
     public function store(hsprequest $request)
     {
         $datos= $request->validated();
-        // dd($datos);
         $medicion = hsp::create($datos);
         return redirect()->route('hsp.index');
 

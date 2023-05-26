@@ -10,11 +10,9 @@
       <div class="container">
          <div class="menu_main">
             <ul>
-               <li><a href="index">Inicio</a></li>
-               <li><a href="about">About</a></li>
-               <li class="active"><a href="software">Mediciones</a></li>
-               <li><a href="services">Services</a></li>
-               <li><a href="contact">Contact Us</a></li>
+               <li><a href="{{ asset('/inicio') }}">Inicio</a></li>
+               <li><a href="{{ asset('/proyectos') }}">Proyectos</a></li>
+               <li class="active"><a href="{{ asset('/mediciones') }}">Mediciones</a></li>
             </ul>
          </div>
          <div class="menu_main_1">
